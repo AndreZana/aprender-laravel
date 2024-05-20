@@ -1,1 +1,1 @@
-Aqui é a página com a Categoria dos Produtos!
+Aqui é a página dos Produtos separados por Categoria!
