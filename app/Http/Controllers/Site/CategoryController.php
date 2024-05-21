@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -12,12 +13,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('site.category.index');
+        return view('site.category.index', ['categories' => []]);
+
     }
 
-    public function show($slug)
+    public function show(Category $category)
     {
-        return view('site.category.show', ['slug' => $slug]);
+        return view('site.category.show', ['category' => $category->load('products')]);
+
     }
     
 }
