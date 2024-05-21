@@ -9,15 +9,15 @@ use App\Http\Controllers\Site\ContactController;
 
 
 Route::namespace('Site')->group(function () {
-    Route::get('/', 'HomeController')->name('site.home');
+    Route::get('/', [HomeController::class, '__invoke'])->name('site.home');
 
-    Route::get('produtos', 'CategoryController@index')->name('site.products');
-    Route::get('produtos/{category}', 'CategoryController@show')->name('site.products.category');
+    Route::get('produtos', [CategoryController::class, 'index'])->name('site.products');
+    Route::get('produtos/{category}', [CategoryController::class, 'index'])->name('site.products.category');
 
-    Route::get('blog', 'BlogController')->name('site.blog');
+    Route::get('blog', [BlogController::class, '__invoke'])->name('site.blog');
 
     Route::view('sobre', 'site.about.index')->name('site.about');
 
-    Route::get('contato', 'ContactController@index')->name('site.contact');
-    Route::post('contato', 'ContactController@form')->name('site.contact.form');
+    Route::get('contato', [ContactController::class, 'index'])->name('site.contact');
+    Route::post('contato', [ContactController::class, 'form'])->name('site.contact.form');
 });
