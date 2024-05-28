@@ -13,8 +13,8 @@ class Category extends Model
 
     protected $fillable = [
         "name",
-        "image",
-        "description"
+        "description",
+        "image"
     ];
 
     protected $dates = [
@@ -23,6 +23,6 @@ class Category extends Model
 
         public function products()
         {
-            return $this->hasMany('Product'::class);
+            return $this->hasMany(Product::class);
         }
 }

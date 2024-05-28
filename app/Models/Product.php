@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use SoftDeletes;
+    protected $table = 'products';
 
     protected $fillable = [
         "category_id",
         "name",
         "description",
-        "exclusive",
+        "exclusive"
     ];
 
     protected $dates = [
@@ -23,7 +24,7 @@ class Product extends Model
 
         public function category()
         {
-            return $this->belongsTo('Category'::class);
+            return $this->belongsTo(Category::class);
         }
 
 }

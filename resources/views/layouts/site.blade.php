@@ -28,7 +28,6 @@
     <!-- Links & Scripts -->
     <link rel="stylesheet" href="https://use.typekit.net/nbc5nyh.css">
     <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
-    <!-- @toastr_css -->
 
 
     <link id="favicon" rel="shortcut icon" href="{{asset('images/Frame.svg')}}" sizes="16x16" type="image/svg">
@@ -152,8 +151,6 @@
 
 <script type="text/javascript" src="{{asset('lightbox/js/lightbox.js')}}"></script>
 
-<!-- @toastr_js -->
-<!-- @toastr_render -->
 
 <script>
     $("#toggle").click(function () {

@@ -12,7 +12,7 @@ Route::namespace('Site')->group(function () {
     Route::get('/', [HomeController::class, '__invoke'])->name('site.home');
 
     Route::get('produtos', [CategoryController::class, 'index'])->name('site.products');
-    Route::get('produtos/{category}', [CategoryController::class, 'index'])->name('site.products.category');
+    Route::get('produtos/{category}', [CategoryController::class, 'show'])->name('site.products.category');
 
     Route::get('blog', [BlogController::class, '__invoke'])->name('site.blog');
 
